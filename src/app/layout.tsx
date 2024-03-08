@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import '../styles/globals.css';
 import Providers from '@/components/providers';
 
-const inter = Inter({ subsets: ['latin'] });
+const hubot = localFont({
+	src: '../../public/assets/fonts/Hubot-Sans.woff2',
+	variable: '--font-hubot',
+	display: 'swap',
+	// weight: '',
+});
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -16,8 +21,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
-			<body className={inter.className}>
+		<html lang='en' suppressHydrationWarning>
+			<body
+				className={`${hubot.className} h-[calc(100dvh)] w-full bg-background text-foreground antialiased`}
+			>
 				<Providers>{children}</Providers>
 			</body>
 		</html>
