@@ -1,10 +1,10 @@
+import Providers from '@/components/providers';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import '../styles/globals.css';
-import Providers from '@/components/providers';
+import '../../styles/globals.css';
 
 const hubot = localFont({
-	src: '../../public/assets/fonts/Hubot-Sans.woff2',
+	src: '../../../public/assets/fonts/Hubot-Sans.woff2',
 	variable: '--font-hubot',
 	display: 'swap',
 	// weight: '',
